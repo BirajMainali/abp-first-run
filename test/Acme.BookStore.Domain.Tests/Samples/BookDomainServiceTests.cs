@@ -18,7 +18,7 @@ public class BookDomainServiceTests : BookStoreDomainTestBase
 
     public BookDomainServiceTests()
     {
-        _bookDomainService = new BookDomainService(uow: _unitOfWorkManager, productRepo: _bookRepo);
+        _bookDomainService = new BookDomainService(uow: _unitOfWorkManager, bookRepo: _bookRepo);
     }
 
     [Fact]

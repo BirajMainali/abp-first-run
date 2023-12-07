@@ -12,12 +12,12 @@ namespace Acme.BookStore.Services;
 public class BookDomainService : IScopedDependency
 {
     private readonly IUnitOfWorkManager _uow;
-    private readonly IRepository<Book, long> _productRepo;
+    private readonly IRepository<Book, long> _bookRepo;
 
-    public BookDomainService(IUnitOfWorkManager uow, IRepository<Book, long> productRepo)
+    public BookDomainService(IUnitOfWorkManager uow, IRepository<Book, long> bookRepo)
     {
         _uow = uow;
-        _productRepo = productRepo;
+        _bookRepo = bookRepo;
     }
 
     public async Task<Result<Book>> RecordBookAsync(BookDto dto)
@@ -25,16 +25,16 @@ public class BookDomainService : IScopedDependency
         using var uow = _uow.Begin();
         if (dto.Name.IsNullOrEmpty())
         {
-            return Result<Book>.Failure("Product name is not specified")!;
+            return Result<Book>.Failure("Book name is not specified")!;
         }
 
-        var product = new Book
+        var book = new Book
         {
             Name = dto.Name
         };
-        await _productRepo.InsertAsync(product);
+        await _bookRepo.InsertAsync(book);
         await uow.SaveChangesAsync();
         await uow.CompleteAsync();
-        return Result<Book>.Success(product)!;
+        return Result<Book>.Success(book)!;
     }
 }
