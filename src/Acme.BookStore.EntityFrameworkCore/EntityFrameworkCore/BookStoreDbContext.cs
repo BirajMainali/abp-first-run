@@ -47,7 +47,7 @@ public class BookStoreDbContext :
     public DbSet<IdentitySecurityLog> SecurityLogs { get; set; }
     public DbSet<IdentityLinkUser> LinkUsers { get; set; }
     public DbSet<IdentityUserDelegation> UserDelegations { get; set; }
-    public DbSet<Product> Products { get; set; }
+    public DbSet<Book> Products { get; set; }
 
     // Tenant Management
     public DbSet<Tenant> Tenants { get; set; }

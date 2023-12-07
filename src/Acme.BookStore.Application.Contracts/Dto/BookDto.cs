@@ -1,6 +1,6 @@
 ﻿namespace Acme.BookStore.Dto;
 
-public class ProductDto
+public class BookDto
 {
     public string Name { get; set; }
 }

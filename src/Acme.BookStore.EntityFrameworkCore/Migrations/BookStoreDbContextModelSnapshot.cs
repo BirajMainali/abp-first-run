@@ -24,7 +24,7 @@ namespace Acme.BookStore.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Acme.BookStore.Entity.Product", b =>
+            modelBuilder.Entity("Acme.BookStore.Entity.Book", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()

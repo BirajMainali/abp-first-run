@@ -13,8 +13,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Acme.BookStore.Migrations
 {
     [DbContext(typeof(BookStoreDbContext))]
-    [Migration("20231207062532_added product")]
-    partial class addedproduct
+    [Migration("20231207091300_add book")]
+    partial class addbook
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,7 +27,7 @@ namespace Acme.BookStore.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Acme.BookStore.Entity.Product", b =>
+            modelBuilder.Entity("Acme.BookStore.Entity.Book", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()

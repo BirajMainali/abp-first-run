@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Acme.BookStore.Migrations
 {
     /// <inheritdoc />
-    public partial class addedproduct : Migration
+    public partial class addbook : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
